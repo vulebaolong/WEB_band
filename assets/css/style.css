@@ -26,7 +26,7 @@ html{
 
 .row {
     margin-left: -8px;
-    margin-right: -8px;
+    margin-right: -8px; 
 }
 
 .row::after {
@@ -60,9 +60,9 @@ html{
     background-color: black;
     position: fixed;
     top: 0;
-    left: 0;
-    right: 0; 
+    width: 100%;
     z-index: 1; 
+    /* border: 1px solid green; */
 }
 
 #nav{
@@ -114,21 +114,30 @@ html{
     font-size: 14px;
 }
 /* ========================= */
+#head .mobile_menu_btn,
 #head .search{
-    /* display: inline-block; */
     float: right;
-    padding: 0 22px;
+    padding: 0 20px;
+    height: 46px;
 }
 
 #head .search:hover {
-    background-color: #f44336!important;
+    background-color: #f44336;
     cursor: pointer;
 }
 
+#head .menu_icon,
 #head .search .search_icon{
     color: white;
     font-size: 18px;
     line-height: 46px;
+}
+
+#head .mobile_menu_btn:hover {
+    background-color: #cccccc;
+}
+#head .mobile_menu_btn:hover .menu_icon{
+    color: black;
 }
 /* ================= */
 
@@ -170,6 +179,7 @@ html{
     max-width: 100%;
     margin-left: auto;
     margin-right: auto;
+    padding: 0 16px;
 }
 
 #content .about {
