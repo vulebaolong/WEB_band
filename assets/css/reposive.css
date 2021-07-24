@@ -1,19 +1,36 @@
 
 /* Mobile and tablet width < 1024px */
 @media only screen and (max-width: 63.9375em) {
-   
+    .btn{
+        padding: 15px 16px;
+    }
+    .contact_form .input {
+        padding: 15px 
+    }
+    #footer .body .icon_list {
+        font-size: 48px;
+    }
+
+    #footer .body .icon_list i {
+        padding: 10px;
+    }
+
+    #footer .body .desreption {
+        font-size: 34px;
+    }
+
+    #footer .body .desreption a {
+        padding: 20px 0;
+    }
 }
 /* Tablet and PC width >= 740px */
 @media only screen and (min-width: 46.25em) {
-   .mobile_menu_btn{
-       display: none;
-   }
+   
 }
 
 /* Tablet: width >= 740px and width < 1024px */
 @media only screen and (min-width: 46.25em) and (max-width: 63.9375em) {
-    
-    
+        
 }
 
 /* PC width >= 1024px */
@@ -25,14 +42,65 @@
 
 /* Mobile: width < 740px */
 @media only screen and (max-width: 46.1875em) {
-    #nav li {
-        display: block;
-    } 
+    .s-full-width {
+        width: 100% !important;
+    }
+    
     #head {
         overflow: hidden;
-    }   
+    }  
+    #nav {
+        display: block;
+    }
+    #nav > li {
+        display: block;
+    } 
+
+    #nav > li > a {
+        padding: 1px 24px;
+    }
+
+    #nav > li:first-child {
+        display: inline-block;
+    } 
+    
+    .mobile_menu_btn{
+        display: block;
+    }
+    
     #head .search {
         display: none;
     }
+
+    /* thẻ head có overflow: hidden nên những thằng nào nằm ngoài nó sẽ không hiện
+    thẻ subnav khi có position: absulute sẽ tách ra khỏi thể head và bị ảnh hưởng bơi overflow nên không hiện
+    khắc phục bằng cách cho thẻ subnav nằm lại trọng thẻ head bằng cách không cho position: absolute nữa*/
+    #nav li:hover .subnav {
+        display: block;
+        position: inherit;
+        background-color: #333;
+    }
+
+    #nav .subnav li a {
+        color: white;
+        padding:5px 51px;
+    }
+
     
+
+    .team .text-center {
+        width: 100%;
+        margin-top: 30px;
+    }
+
+    .team .text-center .name {
+        margin-bottom: 15px;
+    }
+
+    .tour .show .show_item,
+    .contact .contact_body .contact_body_list,
+    .contact .contact_body .contact_form {
+        margin-top: 16px;
+        width: 100%;
+    }
 }

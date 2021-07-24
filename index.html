@@ -25,34 +25,33 @@
 
             <!-- Begin nav -->
             <ul id="nav">
-                <li><a class="js_click_hidden" href="#">HOME</a></li>
-                <li><a class="js_click_hidden" href="#BAND">BAND</a></li>
-                <li><a class="js_click_hidden" href="#TOUR">TOUR</a></li>
-                <li><a class="js_click_hidden" href="#CONTACT">CONTACT</a></li>
+                <li><a href="#">HOME</a></li>
+                <li><a href="#BAND">BAND</a></li>
+                <li><a href="#TOUR">TOUR</a></li>
+                <li><a href="#CONTACT">CONTACT</a></li>
                 <li>
-                    
-                    <a id="js_nav_item_more" href="#">
+                    <a href="#">
                         MORE
                         <i class="nav_icon_down ti-angle-down"></i>
                     </a>
-                    <ul id="js_subnav" class="subnav">
-                        <li><a class="js_click_hidden" href="#">Merchandise</a></li>
-                        <li><a class="js_click_hidden" href="#">Estrass</a></li>
-                        <li><a class="js_click_hidden" href="#">Media</a></li>
+                    <ul class="subnav"> <!-- anh em liền kề với thẻ a -->
+                        <li><a href="#">Merchandise</a></li>
+                        <li><a href="#">Estrass</a></li>
+                        <li><a href="#">Media</a></li>
                     </ul>
                 </li>
             </ul>
             <!-- End nav -->
 
-            <!-- Begin seach button -->
-            <div class="search">
-                <i class="search_icon ti-search"></i>
-            </div>
-            <!-- End seach button -->
-
+            <!-- Menu mobile button -->
             <div id="js_menu_mobile" class="mobile_menu_btn">
                 <i class="menu_icon fas fa-bars"></i>
             </div>
+            <!-- seach button -->
+            <div class="search">
+                <i class="search_icon ti-search"></i>
+            </div>
+            
         </div>
 
         <div id="slidebar">
@@ -121,32 +120,32 @@
                             </div>
                         </div>
         
-                        <div class="row show">
-                            <div class="col col_3">
+                        <div class="row show mt-16">
+                            <div class="col col_3 show_item">
                                 <img src="./assets/img/tour/tour1.jpg" alt="Tour1" class="item_img">
                                 <div class="item_text">
                                     <h3 class="text_heading">New York</h3>
                                     <p class="text_date">Fri 27 Nov 2016</p>
                                     <p class="text_descreption">Praesent tincidunt sed tellus ut rutrum sed vitae justo.</p>
-                                    <bunton class="btn js-buy-ticket">Buy Tickets</bunton>
+                                    <bunton class="btn js-buy-ticket s-full-width">Buy Tickets</bunton>
                                 </div>
                             </div>
-                            <div class="col col_3">
+                            <div class="col col_3 show_item">
                                 <img src="./assets/img/tour/tour2.jpg" alt="Tour2" class="item_img">
                                 <div class="item_text">
                                     <h3 class="text_heading">Paris</h3>
                                     <p class="text_date">Sat 28 Nov 2016</p>
                                     <p class="text_descreption">Praesent tincidunt sed tellus ut rutrum sed vitae justo.</p>
-                                    <bunton class="btn js-buy-ticket">Buy Tickets</bunton>
+                                    <bunton class="btn js-buy-ticket s-full-width">Buy Tickets</bunton>
                                 </div>
                             </div>
-                            <div class="col col_3">
+                            <div class="col col_3 show_item">
                                 <img src="./assets/img/tour/tour3.jpg" alt="Tour3" class="item_img">
                                 <div class="item_text">
                                     <h3 class="text_heading">San Francisco</h3>
                                     <p class="text_date">Sun 29 Nov 2016</p>
                                     <p class="text_descreption">Praesent tincidunt sed tellus ut rutrum sed vitae justo.</p>
-                                    <bunton class="btn js-buy-ticket">Buy Tickets</bunton>
+                                    <bunton class="btn js-buy-ticket s-full-width">Buy Tickets</bunton>
                                 </div>
                             </div>
                         </div>
@@ -186,9 +185,7 @@
                                         <input class="input" required type="text" placeholder="Messsage">
                                     </div>
                                 </div>
-    
-                                <input class="mt-16 btn submit_btn" type="submit" value="SEND">
-    
+                                <button class="mt-16 btn submit_btn s-full-width" type="submit">SEND</button>
                             </form>
                         </div>
     
@@ -306,30 +303,30 @@
             var isClose = header.clientHeight === headerHieght;
             if (isClose) {
                 header.style.height = "auto";
-                header.style.overflow = "visible";
+                // header.style.overflow = "visible";
             } else {
                 header.style.height = null;
-                header.style.overflow = "hidden";
+                // header.style.overflow = "hidden";
             }
         }
 
         /* tự dộng đóng menu */
-        // var menuItems = document.querySelectorAll("#nav li a[href*='#']");
-        // for (var i = 0; i < menuItems.length; i++) {
-        //     var menuItem = menuItems[i];
-        //     menuItem.onclick = function() {
-        //         header.style.height = null;
-        //     }
-        // }
-        
-        var menuItems = document.querySelectorAll(".js_click_hidden");
-        for (let index = 0; index < menuItems.length; index++) {
-            var menuItem = menuItems[index];
-            menuItem.onclick = function() {
-            header.style.height = null;
-            header.style.overflow = "hidden";
+        var menuItems = document.querySelectorAll("#nav li a[href*='#']"); /* lọc ra các thẻ a có href='#' */
+        for (var i = 0; i < menuItems.length; i++) {
+            var menuItem = menuItems[i];
+            // console.log(menuItem);
+            menuItem.onclick = function(event) {
+                /* this sẽ tra lại giá trị của chính element có click */
+                var isSibling = this.nextElementSibling && this.nextElementSibling.classList.contains("subnav");
+                // console.log(this);
+                if (isSibling) {
+                    event.preventDefault();
+                } else {
+                    header.style.height = null;
+                }
             }
         }
+        
         
       
 

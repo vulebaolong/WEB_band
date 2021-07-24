@@ -67,15 +67,16 @@ html{
 
 #nav{
     display: inline-block;
+    position: relative;
 }
 
 #nav li{
     display: inline-block;
-    position: relative;
 }
 
 #nav li a{
     display: inline-block;
+    width: 100%;
     color: white;
     text-decoration: none;
     line-height: 46px;
@@ -91,6 +92,7 @@ html{
 }
 
 #nav .subnav {
+    /* top: 60%; */
     display: none;
     position: absolute;
     background-color: white;
@@ -114,6 +116,12 @@ html{
     font-size: 14px;
 }
 /* ========================= */
+.mobile_menu_btn{
+    display: none;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
 #head .mobile_menu_btn,
 #head .search{
     float: right;
@@ -121,16 +129,18 @@ html{
     height: 46px;
 }
 
-#head .search:hover {
-    background-color: #f44336;
-    cursor: pointer;
-}
+
 
 #head .menu_icon,
 #head .search .search_icon{
     color: white;
     font-size: 18px;
     line-height: 46px;
+}
+
+#head .search:hover {
+    background-color: #f44336;
+    cursor: pointer;
 }
 
 #head .mobile_menu_btn:hover {
@@ -285,8 +295,8 @@ html{
 }
 
 .tour .show {    
-    margin-top: 32px;
-    margin-bottom: 48px;
+    margin-top: 16px;
+    /* margin-bottom: 48px; */
 }
 
 .tour .show  .item_img {
@@ -325,6 +335,7 @@ html{
     color: white;
     padding: 11px 16px;
     border: none;
+    text-align: center;
 }
 
 .btn:hover {
