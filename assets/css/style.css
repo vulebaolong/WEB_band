@@ -166,6 +166,7 @@ html{
     transform: translateX(-50%);
     color: white;
     text-align: center;
+    text-shadow: 0 0 1px #000;
 }
 
 #slidebar .slidebar_text  .slidebar_text-heading {
@@ -358,6 +359,14 @@ html{
 }
 .contact_body_list p i[class*="fas"] {
     width: 30px;
+}
+
+.contact_body_list p  a{
+    color:blue;
+}
+
+.contact_body_list p  a:hover {
+    color:#2196F3;
 }
 
 .contact_body{

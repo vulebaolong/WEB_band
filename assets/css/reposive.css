@@ -40,7 +40,7 @@
     }
 }
 
-/* Mobile: width < 740px */
+/* Mobile: width < 739px */
 @media only screen and (max-width: 46.1875em) {
     .s-full-width {
         width: 100% !important;
